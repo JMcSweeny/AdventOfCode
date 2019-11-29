@@ -1,6 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open System
+open System.Diagnostics
+open System.IO
 open System.Reflection
 open Common
 
@@ -21,12 +22,12 @@ let runProgram (year, day, part) =
     printfn "Running program %i.%i.%i" year day part
 
     let tryFindSolution = List.tryFind (fst >> (fun (s: SolutionAttribute) -> s.Year = year && s.Day = day && s.Part = part))
-    let inputFileName = sprintf "Day%i_%i.txt" day year 
+    let inputFilePath = Path.Combine("Data", string year, sprintf "Day%i.txt" day) 
 
     match getSolutions() |> tryFindSolution with
         | Some (_, mi) -> 
-            let stopWatch = Diagnostics.Stopwatch.StartNew()
-            let result = mi.Invoke(null, [|inputFileName|]) |> string
+            let stopWatch = Stopwatch.StartNew()
+            let result = mi.Invoke(null, [|inputFilePath|]) |> string
             (result, stopWatch.ElapsedMilliseconds)
         | None -> failwithf "Could not find solution for %i.%i.%i" year day part
 
