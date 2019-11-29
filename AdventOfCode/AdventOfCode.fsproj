@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Common.fs" />
+    <Compile Include="2018\Day4_2018.fs" />
+    <Compile Include="2018\Day3_2018.fs" />
+    <Compile Include="2018\Day2_2018.fs" />
+    <Compile Include="2018\Day1_2018.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+</Project>
