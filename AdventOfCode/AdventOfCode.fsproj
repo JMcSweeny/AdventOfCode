@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <Compile Include="Common.fs" />
+    <Compile Include="Coordinates.fs" />
+    <Compile Include="Solutions\2018\Day6.fs" />
     <Compile Include="Solutions\2018\Day5.fs" />
     <Compile Include="Solutions\2018\Day4.fs" />
     <Compile Include="Solutions\2018\Day3.fs" />
@@ -18,7 +20,5 @@
     </Content>
     <Compile Include="Program.fs" />
   </ItemGroup>
-
-  <ItemGroup />
 
 </Project>

@@ -2,9 +2,9 @@
 
 module Day3 =
     open Common
+    open Coordinates
 
     type Claim = { id: int; left: int; top: int; width: int; height: int }
-    type Boundry = { startX: int; endX: int; startY: int; endY: int }
 
     let parseClaim (line: string) =
         let parts = line.Split(" ,x:#".ToCharArray())
@@ -15,12 +15,6 @@ module Day3 =
 
     let getBoundries (claim: Claim) =
         { startX = claim.left; endX = claim.left + claim.width - 1; startY = claim.top; endY = claim.top + claim.height - 1 }
-
-    let boundryToCoords (boundry: Boundry) =
-        let xValues = seq { boundry.startX..boundry.endX }
-        let yValues = seq { boundry.startY..boundry.endY }
-
-        yValues |> Seq.collect (fun y -> xValues |> Seq.map (fun x -> (x, y)))
 
     let getCoords = getBoundries >> boundryToCoords >> Set.ofSeq
 
