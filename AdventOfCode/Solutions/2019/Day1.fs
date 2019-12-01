@@ -7,8 +7,8 @@ module Day1 =
 
     let rec calculateTotalFuel mass =
         match calculateFuel mass with
-            | m when m <= 0 -> mass
-            | m -> mass + calculateTotalFuel m
+            | m when m <= 0 -> 0
+            | m -> m + calculateTotalFuel m
 
     [<Solution(2019, 1, 1)>]
     let part1 fileName = 
@@ -20,5 +20,4 @@ module Day1 =
     let part2 fileName =
         fileName
         |> readLinesAs int
-        |> Seq.map calculateFuel
         |> Seq.sumBy calculateTotalFuel
