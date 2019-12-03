@@ -79,7 +79,7 @@ module Day7 =
 
     [<Solution(2018, 7, 2)>]
     let part2 (fileName: string) =
-        let instructions = 
+        let instructions =  
             fileName 
             |> parseInput
 

@@ -15,6 +15,7 @@
     <Compile Include="Solutions\2018\Day5.fs" />
     <Compile Include="Solutions\2018\Day6.fs" />
     <Compile Include="Solutions\2018\Day7.fs" />
+    <Compile Include="Solutions\2019\Day2.fs" />
     <Compile Include="Solutions\2019\Day1.fs" />
     <Content Include="Data\**\*.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
