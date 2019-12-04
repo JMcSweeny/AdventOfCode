@@ -17,10 +17,8 @@ module Day6 =
 
     let isBoundry (x, y) boundries = x = boundries.startX || x = boundries.endY || y = boundries.startY || y = boundries.endY
 
-    let getDistance (x1, y1) (x2, y2) = abs (x1 - x2) + abs (y1 - y2)
-
     let foldDistance (beacons: Set<int * int>) (coord: int * int) (distanceMap: Map<int * int, (int * int) list>) =
-        let distances = beacons |> Set.map (fun c -> (c, getDistance c coord))
+        let distances = beacons |> Set.map (fun c -> (c, getManhattanDistance c coord))
         let minDistance = distances |> Seq.minBy snd |> snd
 
         let minCoords = distances |> Seq.filter (fun (_, d) -> d = minDistance) |> Seq.toList
@@ -45,7 +43,7 @@ module Day6 =
         distanceMap |> Map.filter (fun _ coords -> not (isInifinite boundries coords))
 
     let foldTotalDistance (beacons: Set<int * int>) (coord: int * int) (totalDistanceMap: Map<int * int, int>) =
-        let totalDistance = beacons |> Seq.sumBy (fun c -> getDistance c coord)
+        let totalDistance = beacons |> Seq.sumBy (fun c -> getManhattanDistance c coord)
         Map.add coord totalDistance totalDistanceMap
 
     let getTotalDistanceMap beacons allCoords = allCoords |> Set.fold (fun map c -> foldTotalDistance beacons c map) Map.empty
@@ -54,7 +52,7 @@ module Day6 =
     let part1 fileName = 
         let beacons = readLinesAs parseLineAsCoord fileName |> Set.ofSeq
         let boundries = getBoundries beacons
-        let allCoords = boundryToCoords boundries
+        let allCoords = boundryToCoords boundries |> Set.ofSeq
         let distanceMap = getDistanceMap beacons allCoords
 
         distanceMap
@@ -69,7 +67,7 @@ module Day6 =
      let part2 fileName = 
         let beacons = readLinesAs parseLineAsCoord fileName |> Set.ofSeq
         let boundries = getBoundries beacons
-        let allCoords = boundryToCoords boundries
+        let allCoords = boundryToCoords boundries |> Set.ofSeq
 
         let totalDistanceMap = getTotalDistanceMap beacons allCoords
 
