@@ -40,7 +40,3 @@ module Day5 =
         |> Seq.find (fun (i, j) -> j - i <> 1)
         |> fst
         |> (+) 1
-
-
-
-
