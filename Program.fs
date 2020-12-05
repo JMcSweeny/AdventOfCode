@@ -22,7 +22,7 @@ let runProgram (year, day, part) =
     printfn "Running program %i.%i.%i" year day part
 
     let tryFindSolution = List.tryFind (fst >> (fun (s: SolutionAttribute) -> s.Year = year && s.Day = day && s.Part = part))
-    let inputFilePath = Path.Combine("Data", string year, sprintf "Day%i.txt" day) 
+    let inputFilePath = Path.Combine("Input", string year, sprintf "Day%i.txt" day) 
 
     match getSolutions() |> tryFindSolution with
         | Some (_, mi) -> 
