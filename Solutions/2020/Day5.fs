@@ -18,7 +18,7 @@ module Day5 =
     let parseRow = Seq.take 7 >> parseInstruction 'F' 'B' initialRowRange
     let parseColumn = Seq.skip 7 >> parseInstruction 'L' 'R' initialColumnRange
 
-    let parseSeatID (s: string) =
+    let seatID (s: string) =
         let row = s |> parseRow
         let column = s |> parseColumn
         row * 8 + column
@@ -26,15 +26,13 @@ module Day5 =
     [<Solution(2020, 5, 1)>]
     let part1 fileName =
         fileName 
-        |> readLines
-        |> Seq.map parseSeatID
+        |> readLinesAs seatID
         |> Seq.max
         
     [<Solution(2020, 5, 2)>]
     let part2 fileName =
         fileName 
-        |> readLines
-        |> Seq.map parseSeatID
+        |> readLinesAs seatID
         |> Seq.sort
         |> Seq.pairwise
         |> Seq.find (fun (i, j) -> j - i <> 1)
