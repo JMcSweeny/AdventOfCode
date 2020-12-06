@@ -10,17 +10,7 @@ module Day6 =
         >> Seq.map (split " ")
 
     let findAggregate = Seq.fold (+) "" >> Seq.distinct >> Seq.length
-
-    let findCommon numPeople = 
-        Seq.fold (+) "" 
-        >> Seq.groupBy id 
-        >> Seq.filter (fun (_, l) -> numPeople = (l |> Seq.length)) 
-        >> Seq.map fst 
-        >> Seq.length
-
-    let findCommonInGroup group = 
-        let numPeople = group |> Seq.length
-        group |> findCommon numPeople
+    let findCommon = Seq.map Set.ofSeq >> Seq.reduce Set.intersect >> Set.count
         
     [<Solution(2020, 6, 1)>]
     let part1 fileName =
@@ -35,5 +25,5 @@ module Day6 =
         fileName
         |> readText
         |> parseGroups
-        |> Seq.map findCommonInGroup
+        |> Seq.map findCommon
         |> Seq.sum
