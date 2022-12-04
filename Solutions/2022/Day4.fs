@@ -28,5 +28,5 @@ module Day4 =
     let part2 fileName =
         fileName
         |> readLinesAs parseAssignments
-        |> Seq.filter (Set.intersectMany >> (fun s -> not (s |> Set.isEmpty)))
+        |> Seq.filter (Set.intersectMany >> Set.isEmpty >> not)
         |> Seq.length
