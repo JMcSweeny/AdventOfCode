@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Input\2022\Day1.txt" />
     <Content Include="Input\2020\Day1.txt" />
     <Content Include="Input\2020\Day2.txt" />
     <Content Include="Input\2020\Day3.txt" />
@@ -25,6 +26,7 @@
     <Content Include="Input\2018\Day7.txt" />
     <Compile Include="Common.fs" />
     <Compile Include="Coordinates.fs" />
+    <Compile Include="Solutions\2022\Day1.fs" />
     <Compile Include="Solutions\2020\Day1.fs" />
     <Compile Include="Solutions\2020\Day2.fs" />
     <Compile Include="Solutions\2020\Day3.fs" />
