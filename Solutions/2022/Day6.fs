@@ -1,4 +1,4 @@
-﻿namespace Soltions20122
+﻿namespace Soltions2022
 
 module Day6 =
     open Common
