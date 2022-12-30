@@ -6,30 +6,78 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Input\2022\Day7.txt" />
-    <Content Include="Input\2022\Day6.txt" />
-    <Content Include="Input\2022\Day5.txt" />
-    <Content Include="Input\2022\Day4.txt" />
-    <Content Include="Input\2022\Day3.txt" />
-    <Content Include="Input\2022\Day2.txt" />
-    <Content Include="Input\2022\Day1.txt" />
-    <Content Include="Input\2020\Day1.txt" />
-    <Content Include="Input\2020\Day2.txt" />
-    <Content Include="Input\2020\Day3.txt" />
-    <Content Include="Input\2020\Day4.txt" />
-    <Content Include="Input\2020\Day5.txt" />
-    <Content Include="Input\2020\Day6.txt" />
-    <Content Include="Input\2019\Day1.txt" />
-    <Content Include="Input\2019\Day2.txt" />
-    <Content Include="Input\2019\Day3.txt" />
-    <Content Include="Input\2019\Day4.txt" />
-    <Content Include="Input\2018\Day1.txt" />
-    <Content Include="Input\2018\Day2.txt" />
-    <Content Include="Input\2018\Day3.txt" />
-    <Content Include="Input\2018\Day4.txt" />
-    <Content Include="Input\2018\Day5.txt" />
-    <Content Include="Input\2018\Day6.txt" />
-    <Content Include="Input\2018\Day7.txt" />
+    <Content Include="Input\2022\Day7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2022\Day1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2020\Day6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2019\Day1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2019\Day2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2019\Day3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2019\Day4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Input\2018\Day7.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Common.fs" />
     <Compile Include="Coordinates.fs" />
     <Compile Include="Solutions\2022\Day1.fs" />
