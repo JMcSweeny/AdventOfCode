@@ -30,15 +30,14 @@ module Day8 =
         let findVisibleInColumn = findVisible getTreeInColumn
 
         perimeter
-        |> Seq.map (fun num ->
+        |> Seq.collect (fun num ->
             let visibleInRowForward = findVisibleInRow num perimeter
             let visibleInRowBackward = findVisibleInRow num (perimeter |> List.rev)
             let visibleInColumnForward = findVisibleInColumn num perimeter
             let visibleInColumnBackward = findVisibleInColumn num (perimeter |> List.rev)
 
-            Set.unionMany [| visibleInRowForward; visibleInRowBackward; visibleInColumnForward; visibleInColumnBackward |]
+            [| visibleInRowForward; visibleInRowBackward; visibleInColumnForward; visibleInColumnBackward |]
         )
-        |> Set.unionMany
 
     let mergeScores (scoreList: seq<Map<int * int, int>>) =
         scoreList
@@ -98,6 +97,7 @@ module Day8 =
         |> readLinesAs parseLine
         |> List.ofSeq
         |> findAllVisible
+        |> Set.unionMany
         |> Set.count
 
     [<Solution(2022, 8, 2)>]
