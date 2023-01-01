@@ -5,39 +5,20 @@ module Day8 =
 
     let parseLine = Seq.toList >> List.map string >> List.map int
 
-    let findAllVisible (trees: list<list<int>>) =
-        let max = (trees |> Seq.length) - 1
-        let perimeter = [0..max]
-
+    let getTreeInRow (trees: list<list<int>>) (x: int) (y: int) = ((x, y), trees.[x].[y])
+    let getTreeInColumn (trees: list<list<int>>) (x: int) (y: int) = ((y, x), trees.[y].[x])
+    
+    let findVisible (getTree) (max) (outer: int) (inner: seq<int>) =
         let isEdge (x, y) = x = 0 || x = max || y = 0 || y = max
-
-        let getTreeInRow (x: int) (y: int) = ((x, y), trees.[x].[y])
-        let getTreeInColumn (x: int) (y: int) = ((y, x), trees.[y].[x])
-
-        
-        let findVisible (getTree) (outer: int) (inner: seq<int>) =
-            inner
-            |> Seq.fold (fun ((visible: Set<int * int>), (tallest: int)) i -> 
-                let (coord, tree) = getTree outer i
-                match tallest with
-                | _ when isEdge coord -> ((visible |> Set.add coord), tree)
-                | t when tree > t -> ((visible |> Set.add coord), tree)
-                | _ -> (visible, tallest)
-            ) (Set.empty, 0)
-            |> fst
-
-        let findVisibleInRow = findVisible getTreeInRow
-        let findVisibleInColumn = findVisible getTreeInColumn
-
-        perimeter
-        |> Seq.collect (fun num ->
-            let visibleInRowForward = findVisibleInRow num perimeter
-            let visibleInRowBackward = findVisibleInRow num (perimeter |> List.rev)
-            let visibleInColumnForward = findVisibleInColumn num perimeter
-            let visibleInColumnBackward = findVisibleInColumn num (perimeter |> List.rev)
-
-            [| visibleInRowForward; visibleInRowBackward; visibleInColumnForward; visibleInColumnBackward |]
-        )
+        inner
+        |> Seq.fold (fun ((visible: Set<int * int>), (tallest: int)) i -> 
+            let (coord, tree) = getTree outer i
+            match tallest with
+            | _ when isEdge coord -> ((visible |> Set.add coord), tree)
+            | t when tree > t -> ((visible |> Set.add coord), tree)
+            | _ -> (visible, tallest)
+        ) (Set.empty, 0)
+        |> fst
 
     let mergeScores (scoreList: seq<Map<int * int, int>>) =
         scoreList
@@ -62,33 +43,30 @@ module Day8 =
 
         loop treeLine 0
 
-    let getScenicScores (trees: list<list<int>>) =
+    let getScenicScore (getTree) (max) (outer: int) (inner: seq<int>) =
+        inner
+        |> Seq.fold (fun ((scores: Map<int * int, int>), (treeLine: list<int>)) i ->
+            let (coord, tree) = getTree outer i
+            let treesInView = getTreesInView treeLine tree
+            (scores |> Map.add coord treesInView, tree :: treeLine)
+        ) (Map.empty, List.empty)
+        |> fst
+
+    let traverseTrees fn (trees: list<list<int>>) =
         let max = (trees |> Seq.length) - 1
         let perimeter = [0..max]
 
-        let getTreeInRow (x: int) (y: int) = ((x, y), trees.[x].[y])
-        let getTreeInColumn (x: int) (y: int) = ((y, x), trees.[y].[x])
-
-        let getScenicScore (getTree) (outer: int) (inner: seq<int>) =
-            inner
-            |> Seq.fold (fun ((scores: Map<int * int, int>), (treeLine: list<int>)) i ->
-                let (coord, tree) = getTree outer i
-                let treesInView = getTreesInView treeLine tree
-                (scores |> Map.add coord treesInView, tree :: treeLine)
-            ) (Map.empty, List.empty)
-            |> fst
-
-        let getScenicScoresInRow = getScenicScore getTreeInRow
-        let getScenicScoresInColumn = getScenicScore getTreeInColumn
+        let rowFn = fn (getTreeInRow trees) max
+        let columnFn = fn (getTreeInColumn trees) max
 
         perimeter
         |> Seq.collect (fun num ->
-            let scenicScoresInRowForward = getScenicScoresInRow num perimeter
-            let scenicScoresInRowBackward = getScenicScoresInRow num (perimeter |> List.rev)
-            let scenicScoresInColumnForward = getScenicScoresInColumn num perimeter
-            let scenicScoresInColumnBackward = getScenicScoresInColumn num (perimeter |> List.rev)
+            let rowFoward = rowFn num perimeter
+            let rowBackward = rowFn num (perimeter |> List.rev)
+            let columnForward = columnFn num perimeter
+            let columnBackward = columnFn num (perimeter |> List.rev)
 
-            [| scenicScoresInRowForward; scenicScoresInRowBackward; scenicScoresInColumnForward; scenicScoresInColumnBackward |]
+            [| rowFoward; rowBackward; columnForward; columnBackward |]
         )
 
     [<Solution(2022, 8, 1)>]
@@ -96,7 +74,7 @@ module Day8 =
         fileName
         |> readLinesAs parseLine
         |> List.ofSeq
-        |> findAllVisible
+        |> traverseTrees findVisible
         |> Set.unionMany
         |> Set.count
 
@@ -105,7 +83,7 @@ module Day8 =
         fileName
         |> readLinesAs parseLine
         |> List.ofSeq
-        |> getScenicScores
+        |> traverseTrees getScenicScore
         |> mergeScores
         |> Map.toSeq
         |> Seq.map snd
