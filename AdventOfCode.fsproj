@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Input\2022\Day9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Input\2022\Day8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -91,6 +94,7 @@
     <Compile Include="Solutions\2022\Day6.fs" />
     <Compile Include="Solutions\2022\Day7.fs" />
     <Compile Include="Solutions\2022\Day8.fs" />
+    <Compile Include="Solutions\2022\Day9.fs" />
     <Compile Include="Solutions\2020\Day1.fs" />
     <Compile Include="Solutions\2020\Day2.fs" />
     <Compile Include="Solutions\2020\Day3.fs" />
