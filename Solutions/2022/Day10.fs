@@ -17,9 +17,10 @@ module Day10 =
     let drawRow (cyles: list<int>) =
         cyles
         |> Seq.fold (fun (cycle, pixels) register -> 
-            let pixel = match register with
-            | r when abs (r - cycle) < 2 -> "#"
-            | _ -> "."
+            let pixel = 
+                match register with
+                | r when abs (r - cycle) < 2 -> "#"
+                | _ -> "."
 
             (cycle + 1, pixels + pixel)
         ) (0, "")
