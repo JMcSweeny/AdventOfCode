@@ -27,7 +27,7 @@ module Day4 =
         >> Map.count
         >> (=) 7
 
-    let validatePassportField k v =
+    let validatePassportField (k: string) (v: string) =
         match k with
         | "byr" -> Regex.IsMatch(v, "^(19[2-9][0-9]|200[0-2])$")
         | "iyr" -> Regex.IsMatch(v, "^(201[0-9]|2020)$")
