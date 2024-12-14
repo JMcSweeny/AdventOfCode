@@ -27,6 +27,9 @@
     <Content Include="Input\2024\Day7.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Input\2024\Day8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Input\2023\Day2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -123,6 +126,7 @@
     <Compile Include="Solutions\2024\Day5.fs" />
     <Compile Include="Solutions\2024\Day6.fs" />
     <Compile Include="Solutions\2024\Day7.fs" />
+    <Compile Include="Solutions\2024\Day8.fs" />
     <Compile Include="Solutions\2023\Day1.fs" />
     <Compile Include="Solutions\2023\Day2.fs" />
     <Compile Include="Solutions\2022\Day1.fs" />
