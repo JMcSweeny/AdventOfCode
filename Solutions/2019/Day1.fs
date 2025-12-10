@@ -1,4 +1,4 @@
-﻿namespace Soltions2019
+﻿namespace Solutions2019
 
 module Day1 =
     open Common

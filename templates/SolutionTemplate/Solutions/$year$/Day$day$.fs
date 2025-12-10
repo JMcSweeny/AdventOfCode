@@ -1,4 +1,4 @@
-namespace Soltions$year$
+namespace Solutions$year$
 
 module Day$day$ =
     open Common

@@ -1,4 +1,4 @@
-﻿namespace Soltions2020
+﻿namespace Solutions2020
 
 module Day2 = 
 

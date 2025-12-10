@@ -1,4 +1,4 @@
-﻿namespace Soltions2022
+﻿namespace Solutions2022
 
 module Day3 =
     open Common

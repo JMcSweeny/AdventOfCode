@@ -1,4 +1,4 @@
-namespace Soltions2025
+namespace Solutions2025
 
 module Day1 =
     open Common

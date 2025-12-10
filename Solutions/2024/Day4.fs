@@ -1,4 +1,4 @@
-﻿namespace Soltions2024
+﻿namespace Solutions2024
 
 module Day4 =
     open Common
