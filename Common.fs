@@ -3,10 +3,10 @@
 open System.IO
     
 let readLines filePath =
-    File.ReadAllLines(filePath)
-
+    File.ReadAllLines filePath
+    
 let readText filePath = 
-    File.ReadAllText(filePath)
+    File.ReadAllText filePath
 
 let readLinesAs fn = readLines >> Seq.map fn
 

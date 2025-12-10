@@ -1,161 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Input\2024\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day5.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day7.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2024\Day8.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2023\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2023\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day10.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day9.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day8.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day7.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day5.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2022\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day5.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2020\Day6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2019\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2019\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2019\Day3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2019\Day4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day5.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Input\2018\Day7.txt">
+    <Content Include="Input\**\*.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="Common.fs" />
     <Compile Include="Coordinates.fs" />
-    <Compile Include="Solutions\2024\Day1.fs" />
-    <Compile Include="Solutions\2024\Day2.fs" />
-    <Compile Include="Solutions\2024\Day3.fs" />
-    <Compile Include="Solutions\2024\Day4.fs" />
-    <Compile Include="Solutions\2024\Day5.fs" />
-    <Compile Include="Solutions\2024\Day6.fs" />
-    <Compile Include="Solutions\2024\Day7.fs" />
-    <Compile Include="Solutions\2024\Day8.fs" />
-    <Compile Include="Solutions\2023\Day1.fs" />
-    <Compile Include="Solutions\2023\Day2.fs" />
-    <Compile Include="Solutions\2022\Day1.fs" />
-    <Compile Include="Solutions\2022\Day2.fs" />
-    <Compile Include="Solutions\2022\Day3.fs" />
-    <Compile Include="Solutions\2022\Day4.fs" />
-    <Compile Include="Solutions\2022\Day5.fs" />
-    <Compile Include="Solutions\2022\Day6.fs" />
-    <Compile Include="Solutions\2022\Day7.fs" />
-    <Compile Include="Solutions\2022\Day8.fs" />
-    <Compile Include="Solutions\2022\Day9.fs" />
-    <Compile Include="Solutions\2022\Day10.fs" />
-    <Compile Include="Solutions\2020\Day1.fs" />
-    <Compile Include="Solutions\2020\Day2.fs" />
-    <Compile Include="Solutions\2020\Day3.fs" />
-    <Compile Include="Solutions\2020\Day4.fs" />
-    <Compile Include="Solutions\2020\Day5.fs" />
-    <Compile Include="Solutions\2020\Day6.fs" />
-    <Compile Include="Solutions\2018\Day1.fs" />
-    <Compile Include="Solutions\2018\Day2.fs" />
-    <Compile Include="Solutions\2018\Day3.fs" />
-    <Compile Include="Solutions\2018\Day4.fs" />
-    <Compile Include="Solutions\2018\Day5.fs" />
-    <Compile Include="Solutions\2018\Day6.fs" />
-    <Compile Include="Solutions\2018\Day7.fs" />
-    <Compile Include="Solutions\2019\Day1.fs" />
-    <Compile Include="Solutions\2019\Day2.fs" />
-    <Compile Include="Solutions\2019\Day3.fs" />
-    <Compile Include="Solutions\2019\Day4.fs" />
+    <Compile Include="Solutions\**\*.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
