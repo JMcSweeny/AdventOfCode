@@ -10,6 +10,8 @@ let readText filePath =
 
 let readLinesAs fn = readLines >> Seq.map fn
 
+let readTextAs fn = readText >> fn
+
 type SolutionAttribute(year: int, day: int, part: int) =
     inherit System.Attribute()
     member this.Year = year
