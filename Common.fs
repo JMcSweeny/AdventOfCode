@@ -12,6 +12,8 @@ let readLinesAs fn = readLines >> Seq.map fn
 
 let readTextAs fn = readText >> fn
 
+let readGridAs fn = readLines >> Seq.mapi (fun y line -> line |> Seq.mapi (fun x c ->  fn x y c)) >> Seq.collect id
+
 type SolutionAttribute(year: int, day: int, part: int) =
     inherit System.Attribute()
     member this.Year = year
