@@ -8,11 +8,11 @@ let readLines filePath =
 let readText filePath = 
     File.ReadAllText filePath
 
-let readLinesAs fn = readLines >> Seq.map fn
+let readLinesAs fn = readLines >> Array.map fn
 
 let readTextAs fn = readText >> fn
 
-let readGridAs fn = readLines >> Seq.mapi (fun y line -> line |> Seq.mapi (fun x c ->  fn x y c)) >> Seq.collect id
+let readGridAs fn = readLines >> Array.mapi (fun y line -> line |> Seq.mapi (fun x c ->  fn x y c)) >> Seq.collect id
 
 type SolutionAttribute(year: int, day: int, part: int) =
     inherit System.Attribute()
