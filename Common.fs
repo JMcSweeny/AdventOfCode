@@ -20,8 +20,10 @@ type SolutionAttribute(year: int, day: int, part: int) =
     member this.Day = day
     member this.Part = part
 
-let split (seperator: string) (s:string) = s.Split(seperator)
+let split (seperator: string) (s:string) = s.Split seperator
 let replace (o: string) (n: string) (s: string) = s.Replace(o, n)
 let trim (s: string) = s.Trim()
+let contains (substring: string) (s: string) = s.Contains substring
+let indexOf (c: char) (s: string) = s.IndexOf c
     
 
